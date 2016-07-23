@@ -7,7 +7,8 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Hello OpenShift!")
+	host := os.Getenv("HOSTNAME")
+	fmt.Fprintln(w, "Hello OpenShift! from ", host)
 	fmt.Println("Servicing request.")
 }
 
